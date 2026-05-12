@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worn Through The Chaos</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            background:black;
+            overflow-x:hidden;
+            font-family:Arial, sans-serif;
+        }
+
+        /* WEBSITE BACKGROUND */
+        .homepage{
+            width:100%;
+            display:block;
+        }
+
+        /* LOOP TEXT */
+        .loop-bar{
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:22px;
+
+            background:black;
+            color:white;
+
+            overflow:hidden;
+            white-space:nowrap;
+
+            z-index:1000;
+
+            display:flex;
+            align-items:center;
+        }
+
+        .loop-text{
+            display:inline-block;
+            padding-left:100%;
+
+            font-size:14px;
+            font-weight:bold;
+
+            animation:scrollText 20s linear infinite;
+        }
+
+        @keyframes scrollText{
+
+            0%{
+                transform:translateX(0);
+            }
+
+            100%{
+                transform:translateX(-100%);
+            }
+
+        }
+
+        /* MAIN CONTAINER */
+        .container{
+            position:relative;
+        }
+
+        /* MENU BUTTON*/
+        .menu-button{
+            position:absolute;
+
+            top:55px;
+            left:35px;
+
+            width:40px;
+            cursor:pointer;
+            z-index:2000;
+        }
+
+        .menu-button img{
+            width:100%;
+            display:block;
+        }
+
+        /* SIDE MENU */
+        .side-menu{
+            position:fixed;
+
+            top:0;
+            left:-300px;
+
+            width:300px;
+            height:100vh;
+
+            background:black;
+
+            padding-top:80px;
+
+            transition:0.4s;
+
+            z-index:3000;
+
+            border-right:1px solid white;
+        }
+
+        .side-menu.active{
+            left:0;
+        }
+
+        /* MENU LINKS */
+        .side-menu a{
+            display:block;
+
+            color:white;
+            text-decoration:none;
+
+            font-size:20px;
+
+            padding:20px 30px;
+
+            transition:0.3s;
+        }
+
+        .side-menu a:hover{
+            background:white;
+            color:black;
+        }
+
+        /* CLOSE BUTTON */
+        .close-btn{
+            position:absolute;
+
+            top:20px;
+            right:25px;
+
+            color:white;
+            font-size:35px;
+
+            cursor:pointer;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!--LOOP TEXT-->
+    <div class="loop-bar">
+
+        <div class="loop-text">
+            NEW COLLECTION OFF 15% // NEW COLLECTION OFF 15% // NEW COLLECTION OFF 15% // NEW COLLECTION OFF 15% // NEW COLLECTION OFF 15% // NEW COLLECTION OFF 15% // NEW COLLECTION OFF 15% // NEW COLLECTION OFF 15% // NEW COLLECTION OFF 15% // NEW COLLECTION OFF 15% // NEW COLLECTION OFF 15% // NEW COLLECTION OFF 15% // NEW COLLECTION OFF 15% // NEW COLLECTION OFF 15% // NEW COLLECTION OFF 15% // NEW COLLECTION OFF 15% // NEW COLLECTION OFF 15% // NEW COLLECTION OFF 15% // NEW COLLECTION OFF 15% // NEW COLLECTION OFF 15% // NEW COLLECTION OFF 15% // NEW COLLECTION OFF 15% // NEW COLLECTION OFF 15% // NEW COLLECTION OFF 15% // 
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <!-- MENU BUTTON -->
+        <div class="menu-button" onclick="openMenu()">
+
+            <img src="C:\Users\Lenovo\OneDrive\Desktop\Python_Project\HTML\Web-Programming-Assessment-1-Exercises-\Web-Programming-Assessment\Images\MenuButton.jpg">
+
+        </div>
+
+        <!--SIDE MENU-->
+        <div class="side-menu" id="sideMenu">
+
+            <div class="close-btn" onclick="closeMenu()">
+                ×
+            </div>
+
+            <a href="Index.html">Home Page</a>
+            <a href="jackets.html">Jackets</a>
+            <a href="hoodies.html">Hoodies</a>
+            <a href="tshirts.html">T-Shirts</a>
+            <a href="pants.html">Pants</a>
+            <a href="shorts.html">Shorts</a>
+            <a href="socks.html">Socks</a>
+            <a href="accessories.html">Accessories</a>
+
+        </div>
+
+        <!--Background Image-->
+        <img src="Images\Website Photo\WEBShorts.jpg">
+
+    </div>
+
+    <script>
+
+        function openMenu(){
+
+            document.getElementById("sideMenu").classList.add("active");
+
+        }
+
+        function closeMenu(){
+
+            document.getElementById("sideMenu").classList.remove("active");
+
+        }
+
+    </script>
+
+</body>
+</html>
